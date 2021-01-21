@@ -13,7 +13,10 @@ import MyComponent from "./MyComponent";
 // }
 
 const App = () => {
-  return <MyComponent />;
+  return (
+    <MyComponent name="React" favoriteNumber={3}>
+      리액트<MyComponent>안에 넣은 컴포넌트</MyComponent>
+    </MyComponent>
+  );
 };
-
 export default App;
