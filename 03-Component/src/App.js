@@ -1,5 +1,6 @@
-import Counter from "./CounterClass";
+import Counter from "./Counter";
 import MyComponent from "./MyComponent";
+import Say from "./Say";
 
 // function App() {
 //   const name = "리액트";
@@ -19,7 +20,8 @@ const App = () => {
       <MyComponent name="React" favoriteNumber={3}>
         리액트<MyComponent>안에 넣은 컴포넌트</MyComponent>
       </MyComponent>
-      <Counter></Counter>
+      <Counter />
+      <Say />
     </>
   );
 };
