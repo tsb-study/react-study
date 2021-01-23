@@ -1,3 +1,4 @@
+import Counter from "./CounterClass";
 import MyComponent from "./MyComponent";
 
 // function App() {
@@ -14,9 +15,12 @@ import MyComponent from "./MyComponent";
 
 const App = () => {
   return (
-    <MyComponent name="React" favoriteNumber={3}>
-      리액트<MyComponent>안에 넣은 컴포넌트</MyComponent>
-    </MyComponent>
+    <>
+      <MyComponent name="React" favoriteNumber={3}>
+        리액트<MyComponent>안에 넣은 컴포넌트</MyComponent>
+      </MyComponent>
+      <Counter></Counter>
+    </>
   );
 };
 export default App;
