@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const IterationSample = () => {
-    // const names = ['눈사람', '얼음', '눈', '바람'];
+    //const names = ['눈사람', '얼음', '눈', '바람'];
     const [names, setNames] = useState([
         {id: 1, text: '눈사람'},
         {id: 2, text: '얼음'},
@@ -35,7 +35,7 @@ const IterationSample = () => {
             <button onClick = {onClick}>추가</button>
             <ul>{nameList}</ul>
         </div>
-    );
+    );  
 };
 
 export default IterationSample;
