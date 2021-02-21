@@ -505,12 +505,24 @@ module.exports = function (webpackEnv) {
               use: getStyleLoaders(
                 {
                   importLoaders: 3,
+                  // sourceMap: isEnvProduction && shouldUseSourceMap,
                   sourceMap: isEnvProduction
                     ? shouldUseSourceMap
                     : isEnvDevelopment,
-                },
-                'sass-loader'
-              ),
+                }
+              ).concat({
+                loader: require.resolve('sass-loader'),
+                options : {
+                  sassOptions : {
+                    includePaths : [paths.appSrc + '/styles']
+                  },
+                  sourceMap: isEnvProduction && shouldUseSourceMap,
+                  /* prependData */
+                  // prependData 안에 import 할려고 하는 것을 작성하면 SassComponent.scss에서 import하지않아도
+                  // utils.scss 가 적용되어 있음
+                  // prependData : `@import 'utils.scss';`
+                }
+              }),
               // Don't consider CSS imports dead code even if the
               // containing package claims to have no side effects.
               // Remove this when webpack adds a warning or an error for this.
